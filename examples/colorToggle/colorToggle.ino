@@ -1,8 +1,8 @@
 #include "RGBLed.h"
 
-#define RED_PIN 0
-#define GREEN_PIN 1
-#define BLUE_PIN 2
+#define RED_PIN 13
+#define GREEN_PIN 14
+#define BLUE_PIN 16
 
 #define DELAY_TIME 1000
 

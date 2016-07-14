@@ -1,2 +1,6 @@
 # vim files
 *.swp
+
+# ignore hard linked files
+examples/*/*.cpp
+examples/*/*.h
