@@ -7,7 +7,7 @@
 
 #include "RGBLed.h"
 
-RGBLed::RGBLed( uint8_t redPin, uint8_t greenPin, uint8_t bluePin ) {
+RGBLed::RGBLed( int redPin, int greenPin, int bluePin ) {
 	this->redPin = redPin;
 	this->greenPin = greenPin;
 	this->bluePin = bluePin;
@@ -20,13 +20,13 @@ RGBLed::RGBLed( uint8_t redPin, uint8_t greenPin, uint8_t bluePin ) {
 void RGBLed::setColor( uint8_t redValue, uint8_t greenValue, uint8_t blueValue ) {
 	analogWrite( this->redPin, redValue );
 	analogWrite( this->greenPin, greenValue );
-	analogWrite( this->blueValue, blueValue );
+	analogWrite( this->bluePin, blueValue );
 }
 
-void RGBLed::setColor( uint32_t combinedHex ) {
-	uint8_t red = (combinedHex) & 0xFF;
-	uint8_t green = (combinedHex >> 8) & 0xFF;
-	uint8_t blue = (combinedHex >> 16) & 0xFF;
+void RGBLed::setColor( unsigned long combinedHex ) {
+	uint8_t blue = (byte) combinedHex;
+	uint8_t green = (byte) ( combinedHex >> 8 );
+	uint8_t red = (byte) ( combinedHex >> 16 );
 
 	this->setColor( red, green, blue );
 }

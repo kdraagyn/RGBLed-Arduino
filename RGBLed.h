@@ -7,17 +7,22 @@
 #ifndef RGB_LED_H
 #define RGB_LED_H
 
+#include "Arduino.h"
+
 class RGBLed {
 public:
+	// initialize ( Red, Green, Blue ) pins
+	RGBLed( int, int, int );
+
 	// set color based on 3 8-bit values
 	void setColor( uint8_t, uint8_t, uint8_t );
 
 	// set the color based on hex value
-	void setColor( uint32_t );
+	void setColor( unsigned long );
 private:
-	uint8_t redPin;
-	uint8_t greenPin;
-	uint8_t bluePin
-}
+	int redPin;
+	int greenPin;
+	int bluePin;
+};
 
 #endif
